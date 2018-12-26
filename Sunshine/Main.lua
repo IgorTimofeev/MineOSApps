@@ -10,7 +10,7 @@ if component.isAvailable("debug") then
   local titles = {"I love thunder!", "Lightning bolts!", "SHIT IT RAINS AGAIN", "To rain or not to rain", "Lovely morning!", "Today will be sunny.", "is a first btvoidx's app.", ":^", "Did you saw the lightning?", "A creeper behind you"}
 
   --окно
-  local mainContainer, window = MineOSInterface.addWindow(GUI.titledWindow(5, 5, 54, 16, "Sunshine: ".. titles[math.random(#titles)], true))
+  local application, window = MineOSInterface.addWindow(GUI.titledWindow(5, 5, 54, 16, "Sunshine: ".. titles[math.random(#titles)], true))
   
   local layout = window:addChild(GUI.layout(1, 2, window.width, window.height - 1, 1, 1))
   layout:setSpacing(1, 1, 0)
@@ -59,7 +59,7 @@ if component.isAvailable("debug") then
     layout.height = newHeight - 1
   end
 
-  mainContainer:drawOnScreen()
+  application:draw()
 else
   GUI.alert("This program requires debug card to run")
 end
